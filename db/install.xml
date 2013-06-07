@@ -15,11 +15,11 @@
         <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
       </KEYS>
     </TABLE>
-    <TABLE NAME="webservs_service_building" COMMENT="for matching services and tables">
+    <TABLE NAME="webservs_svc_bldg" COMMENT="for matching services and tables">
       <FIELDS>
         <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
-        <FIELD NAME="service_id" TYPE="int" LENGTH="11" NOTNULL="true" SEQUENCE="false"/>
-        <FIELD NAME="building_id" TYPE="int" LENGTH="11" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="serviceId" TYPE="int" LENGTH="11" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="buildingId" TYPE="int" LENGTH="11" NOTNULL="true" SEQUENCE="false"/>
       </FIELDS>
       <KEYS>
         <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
