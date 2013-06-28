@@ -21,6 +21,7 @@ function get_content() {
 	global $USER, $DB;
 	if (isloggedin() and !isguestuser()){
 //	$DB->set_debug(true);
+	if ($USER->institution=='Student'){
 	$bldgid = $DB->get_record_sql('SELECT id from {webservs_building} WHERE bldgname = ?', array($USER->department)); //gets the bldgID to match on in the next step
 	$results = $DB->get_records_sql('SELECT a.id as id, a.name, a.uri FROM {webservs} a, {webservs_svc_bldg} b WHERE b.serviceId = a.id AND b.buildingId = ?', array($bldgid->id));
 	if ($this->content !==null) {
@@ -34,6 +35,10 @@ function get_content() {
 		$this->content->items[]="<a href=$result->uri Target=_blank>$result->name</a>";
 		$this->content->icons[]="<img src=$result->uri/favicon.ico>";
 		}}
+	else
+//insert staff passport code here
+	exit;
+}
 else {
 	if ($this->content !==null) {
 		return $this->content;
