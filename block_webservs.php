@@ -30,7 +30,6 @@ function get_content() {
 	$this->content	= new stdClass;	
 	$this->content->items = array();
 	$this->content->icons = array();
-	$this->content->footer = 'Footer Here...';
 	foreach ($results as $result) {
 		$this->content->items[]="<a href=$result->uri Target=_blank>$result->name</a>";
 		$this->content->icons[]="<img src=$result->uri/favicon.ico>";
@@ -45,7 +44,6 @@ function get_content() {
         $this->content  = new stdClass;
         $this->content->items = array();
         $this->content->icons = array();
-        $this->content->footer = 'Footer Here...';
         foreach ($results as $result) {
                 $this->content->items[]="<a href=$result->uri Target=_blank>$result->name</a>";
                 $this->content->icons[]="<img src=$result->uri/favicon.ico>";
