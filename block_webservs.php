@@ -31,8 +31,10 @@ function get_content() {
 	$this->content->items = array();
 	$this->content->icons = array();
 	foreach ($results as $result) {
-		$this->content->items[]="<a href=$result->uri Target=_blank>$result->name</a>";
-		$this->content->icons[]="<img src=$result->uri/favicon.ico>";
+	//	$this->content->items[]="<a href=$result->uri Target=_blank> $result->name</a>";
+		$this->content->items[] = html_writer::tag('a', $result->name, array('href' => $result->uri));
+	//	$this->content->icons[]="<img src=http://moodle-sandbox.hopkinsschools.org/1.png>";
+		$this->content->icons[] = html_writer::empty_tag('img', array('class' => 'icon-bookmark'));
 		}}
 	else
 //insert staff passport code here
@@ -45,10 +47,12 @@ function get_content() {
         $this->content->items = array();
         $this->content->icons = array();
         foreach ($results as $result) {
-                $this->content->items[]="<a href=$result->uri Target=_blank>$result->name</a>";
-                $this->content->icons[]="<img src=$result->uri/favicon.ico>";
-                }}
-
+                //$this->content->items[]="<a href=$result->uri Target=_blank> $result->name</a>";
+                  $this->content->items[] = html_writer::tag('a', $result->name, array('href' => $result->uri));
+                
+                 // $this->content->icons[]="<img src=http://moodle-sandbox.hopkinsschools.org/1.png> ";
+		  $this->content->icons[] = html_writer::empty_tag('img', array('class' => 'icon-bookmark'));              
+}}
 else {
 	if ($this->content !==null) {
 		return $this->content;
