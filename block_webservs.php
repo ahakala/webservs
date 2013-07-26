@@ -32,7 +32,7 @@ function get_content() {
 	$this->content->icons = array();
 	foreach ($results as $result) {
 	//	$this->content->items[]="<a href=$result->uri Target=_blank> $result->name</a>";
-		$this->content->items[] = html_writer::tag('a', $result->name, array('href' => $result->uri));
+		$this->content->items[] = html_writer::tag('a', $result->name, array('href' => $result->uri, 'Target'=>'_blank'));
 	//	$this->content->icons[]="<img src=http://moodle-sandbox.hopkinsschools.org/1.png>";
 		$this->content->icons[] = html_writer::empty_tag('img', array('class' => 'icon-bookmark'));
 		}}
@@ -48,7 +48,7 @@ function get_content() {
         $this->content->icons = array();
         foreach ($results as $result) {
                 //$this->content->items[]="<a href=$result->uri Target=_blank> $result->name</a>";
-                  $this->content->items[] = html_writer::tag('a', $result->name, array('href' => $result->uri));
+                  $this->content->items[] = html_writer::tag('a', $result->name, array('href' => $result->uri, 'Target'=>'_blank'));
                 
                  // $this->content->icons[]="<img src=http://moodle-sandbox.hopkinsschools.org/1.png> ";
 		  $this->content->icons[] = html_writer::empty_tag('img', array('class' => 'icon-bookmark'));              
